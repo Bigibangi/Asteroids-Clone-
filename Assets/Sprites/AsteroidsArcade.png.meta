@@ -1,0 +1,318 @@
+fileFormatVersion: 2
+guid: 4f51173b9f64e7449b6b4b1717764f72
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Laser
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 94
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef8c181e31c693e49b8da6253cbd64f0
+      internalID: -1932808085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_Ship
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 227
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84af8dd71539bed448be613658c94e38
+      internalID: -233166808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 198
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440427d1a0e8fe2499efad624039f5a3
+      internalID: 1280039031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 176
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67b5ed976abde5448911be1f7f6f4c10
+      internalID: 2034944151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asteroid
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1
+        width: 58
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46bcfcea85c9404b8c9f8f7861fec54
+      internalID: 176991289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AsteroidPart
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 34
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37421d76bf8a96e4c8633e059c5a0835
+      internalID: 1305480633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AsteroidsArcade_29: 73608076
+      AsteroidsArcade_2: 1464589745
+      AsteroidsArcade_34: -1057510059
+      AsteroidsArcade_9: 1501834950
+      AsteroidsArcade_41: 1038006426
+      AsteroidsArcade_21: -367258694
+      Ship: 1280039031
+      AsteroidsArcade_10: -1654951246
+      AsteroidsArcade_37: 554041537
+      AsteroidsArcade_46: 849189041
+      AsteroidsArcade_56: -78300395
+      AsteroidsArcade_27: -986153237
+      AsteroidsArcade_1: -1193191223
+      AsteroidsArcade_22: -1019819363
+      AsteroidsArcade_17: -657454913
+      AsteroidsArcade_28: 910801781
+      AsteroidPart: 1305480633
+      AsteroidsArcade_11: -60970924
+      AsteroidsArcade_35: 1812394356
+      AsteroidsArcade_3: 1436266700
+      AsteroidsArcade_18: 1591929959
+      AsteroidsArcade_26: -36781226
+      AsteroidsArcade_48: 1429209334
+      Enemy_Ship: -233166808
+      AsteroidsArcade_6: 206406701
+      AsteroidsArcade_30: -212611573
+      AsteroidsArcade_47: -172580887
+      AsteroidsArcade_43: -1750595987
+      AsteroidsArcade_7: -148676669
+      AsteroidsArcade_52: -722386000
+      Laser: -1932808085
+      AsteroidsArcade_15: -205404963
+      AsteroidsArcade_4: 232745963
+      AsteroidsArcade_12: -1947535
+      AsteroidsArcade_42: -2055308371
+      AsteroidsArcade_5: -852147747
+      Bullet: 2034944151
+      AsteroidsArcade_20: -950406904
+      AsteroidsArcade_8: 232421617
+      AsteroidsArcade_53: 1792828290
+      AsteroidsArcade_39: -826233806
+      AsteroidsArcade_24: -955335767
+      AsteroidsArcade_54: -164210853
+      AsteroidsArcade_50: -1173938501
+      AsteroidsArcade_55: 1372470486
+      AsteroidsArcade_49: 218612951
+      AsteroidsArcade_40: 708089976
+      AsteroidsArcade_16: -1559914476
+      AsteroidsArcade_32: 927608637
+      AsteroidsArcade_19: -704156137
+      Asteroid: 176991289
+      AsteroidsArcade_45: 1029751212
+      AsteroidsArcade_51: 1893498591
+      AsteroidsArcade_44: -951235147
+      AsteroidsArcade_25: 1360040416
+      AsteroidsArcade_38: 882374625
+      AsteroidsArcade_36: 640844919
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
