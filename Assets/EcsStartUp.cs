@@ -2,8 +2,11 @@ using Leopotam.Ecs;
 using UnityEngine;
 using Voody.UniLeo;
 using GameLogic.Systems;
+using UnityEngine.InputSystem;
 
 public sealed class EcsStartUp : MonoBehaviour {
+    [SerializeField] private InputAction _inputAction;
+
     private EcsWorld _world;
     private EcsSystems _systems;
 
@@ -30,7 +33,9 @@ public sealed class EcsStartUp : MonoBehaviour {
     private void AddSystems() {
         _systems
             .Add(new PlayerInputSystem())
-            .Add(new MovementSystem());
+            .Add(new MovementSystem())
+            .Add(new AccelerationSystem())
+            .Add(new RotationSystem());
     }
 
     private void OnDestroy() {
