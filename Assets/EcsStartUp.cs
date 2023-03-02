@@ -35,7 +35,8 @@ public sealed class EcsStartUp : MonoBehaviour {
             .Add(new PlayerInputSystem())
             .Add(new MovementSystem())
             .Add(new AccelerationSystem())
-            .Add(new RotationSystem());
+            .Add(new RotationSystem())
+            .Add(new ConstrainedAreaSystem());
     }
 
     private void OnDestroy() {

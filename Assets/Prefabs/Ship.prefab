@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 8903631871058246864}
   - component: {fileID: -2120414097095663075}
   - component: {fileID: 3723503733397009895}
+  - component: {fileID: 2610720522292949816}
+  - component: {fileID: 1867765336}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -142,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value:
-    speed: 5
+    speed: 1.5
 --- !u!114 &-2120414097095663075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value:
-    direction: {x: 0, y: 1}
+    direction: {x: 0, y: 0}
 --- !u!114 &3723503733397009895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,4 +172,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value:
-    rotationSpeed: 15
+    rotationSpeed: 120
+    rotationAxis: 0
+--- !u!114 &2610720522292949816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556765015093384298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d6843a3df3d1242a24d97585c3e99c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    acceleration: 2
+    maxSpeed: 5
+    accelerationDirection: 0
+--- !u!114 &1867765336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556765015093384298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe0ba189d0be564287cfc1ae6c1a66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    constrainedArea:
+      serializedVersion: 2
+      x: -10
+      y: -5
+      width: 20
+      height: 10
