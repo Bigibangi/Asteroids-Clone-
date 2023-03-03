@@ -1,9 +1,5 @@
-﻿using System;
-using UnityEngine.InputSystem;
+﻿namespace GameLogic.Tags {
 
-namespace GameLogic.Tags {
-
-    [Serializable]
     public struct PlayerTag {
     }
 }

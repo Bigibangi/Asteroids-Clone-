@@ -37,7 +37,8 @@ public sealed class EcsStartUp : MonoBehaviour {
             .Add(new AccelerationSystem())
             .Add(new RotationSystem())
             .Add(new ConstrainedAreaSystem())
-            .Add(new RandomDirectionSystem());
+            .Add(new RandomDirectionSystem())
+            .Add(new FollowSystem());
     }
 
     private void OnDestroy() {
