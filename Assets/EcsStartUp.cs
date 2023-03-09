@@ -1,8 +1,10 @@
 using Leopotam.Ecs;
 using UnityEngine;
 using Voody.UniLeo;
-using GameLogic.Systems;
 using UnityEngine.InputSystem;
+using GameLogic.Movement.Systems;
+using GameLogic.GameObjects.Systems;
+using GameLogic.Spawning.Systems;
 
 public sealed class EcsStartUp : MonoBehaviour {
     [SerializeField] private InputAction _inputAction;
@@ -38,7 +40,8 @@ public sealed class EcsStartUp : MonoBehaviour {
             .Add(new RotationSystem())
             .Add(new ConstrainedAreaSystem())
             .Add(new RandomDirectionSystem())
-            .Add(new FollowSystem());
+            .Add(new FollowSystem())
+            .Add(new SpawnSystem());
     }
 
     private void OnDestroy() {
