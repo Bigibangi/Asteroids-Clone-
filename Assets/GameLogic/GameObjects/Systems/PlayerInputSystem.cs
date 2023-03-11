@@ -1,13 +1,14 @@
-﻿using GameLogic.Core.Components;
+﻿using GameLogic.Combat.Components;
+using GameLogic.Core.Components;
 using GameLogic.GameObjects.Tags;
 using GameLogic.Movement.Components;
+using GameLogic.Spawning.Components;
 using Leopotam.Ecs;
 using UnityEngine;
 
 namespace GameLogic.GameObjects.Systems {
 
     public class PlayerInputSystem : IEcsRunSystem {
-        private readonly EcsWorld _world = null;
         private readonly EcsFilter<PlayerTag, Direction, Model, Rotation, Acceleration> _playerFilter = null;
         private float _rotationAxis;
         private float _accelerationDirection;
@@ -28,7 +29,6 @@ namespace GameLogic.GameObjects.Systems {
                 rotationAxis = _rotationAxis;
                 Accelerate();
                 accelerationDirection = _accelerationDirection;
-                Shoot();
             }
         }
 
@@ -43,11 +43,6 @@ namespace GameLogic.GameObjects.Systems {
 
         private void Rotate() {
             _rotationAxis = Input.GetAxis("Horizontal");
-        }
-
-        private void Shoot() {
-            if (Input.GetKey(KeyCode.Q)) {
-            }
         }
     }
 }

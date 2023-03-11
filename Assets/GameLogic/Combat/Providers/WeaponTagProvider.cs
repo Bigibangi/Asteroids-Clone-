@@ -1,7 +1,7 @@
 ﻿using GameLogic.GameObjects.Tags;
 using Voody.UniLeo;
 
-namespace GameLogic.GameObjects.Providers {
+namespace GameLogic.Combat.Providers {
 
     public class WeaponTagProvider : MonoProvider<WeaponTag> {
     }

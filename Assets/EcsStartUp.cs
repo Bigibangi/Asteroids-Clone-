@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 using GameLogic.Movement.Systems;
 using GameLogic.GameObjects.Systems;
 using GameLogic.Spawning.Systems;
+using GameLogic.Combat.Components;
+using GameLogic.Combat.Systems;
+using GameLogic;
 
 public sealed class EcsStartUp : MonoBehaviour {
     [SerializeField] private InputAction _inputAction;
@@ -30,17 +33,22 @@ public sealed class EcsStartUp : MonoBehaviour {
     }
 
     private void AddOneFrames() {
+        _systems
+            .OneFrame<ShootEvent>()
+            .OneFrame<InitializeEntityRequest>();
     }
 
     private void AddSystems() {
         _systems
             .Add(new PlayerInputSystem())
+            .Add(new PlayerShootSendEventSystem())
             .Add(new MovementSystem())
             .Add(new AccelerationSystem())
             .Add(new RotationSystem())
             .Add(new ConstrainedAreaSystem())
             .Add(new RandomDirectionSystem())
             .Add(new FollowSystem())
+            .Add(new ShootingSystem())
             .Add(new SpawnSystem());
     }
 

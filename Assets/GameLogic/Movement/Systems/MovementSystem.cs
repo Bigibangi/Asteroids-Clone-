@@ -6,7 +6,6 @@ using UnityEngine;
 namespace GameLogic.Movement.Systems {
 
     public sealed class MovementSystem : IEcsRunSystem {
-        private readonly EcsWorld _world = null;
         private readonly EcsFilter<Model, Direction, Movable> _movableFilter = null;
 
         public void Run() {
