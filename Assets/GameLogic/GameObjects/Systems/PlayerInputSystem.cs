@@ -10,6 +10,7 @@ namespace GameLogic.GameObjects.Systems {
 
     public class PlayerInputSystem : IEcsRunSystem {
         private readonly EcsFilter<PlayerTag, Direction, Model, Rotation, Acceleration> _playerFilter = null;
+        private UI _ui;
         private float _rotationAxis;
         private float _accelerationDirection;
 
@@ -29,6 +30,7 @@ namespace GameLogic.GameObjects.Systems {
                 rotationAxis = _rotationAxis;
                 Accelerate();
                 accelerationDirection = _accelerationDirection;
+                _ui.GameScreen.PositionLabel.text = transform.localPosition.x.ToString() + " " + transform.localPosition.y.ToString();
             }
         }
 

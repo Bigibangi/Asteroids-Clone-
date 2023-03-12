@@ -11,6 +11,7 @@ using GameLogic;
 
 public sealed class EcsStartUp : MonoBehaviour {
     [SerializeField] private InputAction _inputAction;
+    [SerializeField] private UI _ui;
 
     private EcsWorld _world;
     private EcsSystems _systems;
@@ -30,18 +31,19 @@ public sealed class EcsStartUp : MonoBehaviour {
     }
 
     private void AddInjections() {
+        _systems.Inject(_ui);
     }
 
     private void AddOneFrames() {
         _systems
-            .OneFrame<ShootEvent>()
-            .OneFrame<InitializeEntityRequest>();
+            .OneFrame<ShootEvent>();
     }
 
     private void AddSystems() {
         _systems
             .Add(new PlayerInputSystem())
             .Add(new PlayerShootSendEventSystem())
+            .Add(new EntityInitializeSystem())
             .Add(new MovementSystem())
             .Add(new AccelerationSystem())
             .Add(new RotationSystem())
@@ -49,7 +51,8 @@ public sealed class EcsStartUp : MonoBehaviour {
             .Add(new RandomDirectionSystem())
             .Add(new FollowSystem())
             .Add(new ShootingSystem())
-            .Add(new SpawnSystem());
+            .Add(new SpawnSystem())
+            .Add(new ProjectileMovingSystem());
     }
 
     private void OnDestroy() {
