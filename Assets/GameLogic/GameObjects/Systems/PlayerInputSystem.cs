@@ -13,7 +13,6 @@ namespace GameLogic.GameObjects.Systems {
 
         public void Run() {
             foreach (var i in _playerFilter) {
-                ref var playerTag = ref _playerFilter.Get1(i);
                 ref var directionComponent = ref _playerFilter.Get2(i);
                 ref var modelComponent = ref _playerFilter.Get3(i);
                 ref var rotationComponent = ref _playerFilter.Get4(i);
@@ -22,7 +21,6 @@ namespace GameLogic.GameObjects.Systems {
                 ref var transform = ref modelComponent.modelTransform;
                 ref var rotationAxis = ref rotationComponent.rotationAxis;
                 ref var accelerationDirection = ref accelerationComponent.accelerationDirection;
-                direction = transform.up;
                 rotationAxis = _playerInput.Player.Rotate.ReadValue<float>();
                 accelerationDirection = _playerInput.Player.Accelerate.ReadValue<float>();
                 _ui.GameScreen.PositionLabel.text = transform.localPosition.x.ToString() + " " + transform.localPosition.y.ToString();

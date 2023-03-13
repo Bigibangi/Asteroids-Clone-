@@ -7,10 +7,11 @@ using GameLogic.Spawning.Systems;
 using GameLogic.Combat.Components;
 using GameLogic.Combat.Systems;
 using GameLogic;
-using UnityEngine.InputSystem;
+using GameLogic.Core.Systems;
 
 public sealed class EcsStartUp : MonoBehaviour {
     [SerializeField] private UI _ui;
+    [SerializeField] private PlayerShipData _playerShipData;
 
     private EcsWorld _world;
     private EcsSystems _systems;
@@ -19,6 +20,8 @@ public sealed class EcsStartUp : MonoBehaviour {
     private void Awake() {
         _shipInput = new ShipInput();
     }
+
+    #region MonoBehaviour
 
     private void Start() {
         _world = new EcsWorld();
@@ -38,31 +41,8 @@ public sealed class EcsStartUp : MonoBehaviour {
         _shipInput.Enable();
     }
 
-    private void AddInjections() {
-        _systems.
-            Inject(_ui).
-            Inject(_shipInput);
-    }
-
-    private void AddOneFrames() {
-        _systems
-            .OneFrame<ShootEvent>();
-    }
-
-    private void AddSystems() {
-        _systems
-            .Add(new PlayerInputSystem())
-            .Add(new PlayerShootSendEventSystem())
-            .Add(new EntityInitializeSystem())
-            .Add(new MovementSystem())
-            .Add(new AccelerationSystem())
-            .Add(new RotationSystem())
-            .Add(new ConstrainedAreaSystem())
-            .Add(new RandomDirectionSystem())
-            .Add(new FollowSystem())
-            .Add(new ShootingSystem())
-            .Add(new SpawnSystem())
-            .Add(new ProjectileMovingSystem());
+    private void OnDisable() {
+        _shipInput.Disable();
     }
 
     private void OnDestroy() {
@@ -72,5 +52,37 @@ public sealed class EcsStartUp : MonoBehaviour {
             _world.Destroy();
             _world = null;
         }
+    }
+
+    #endregion MonoBehaviour
+
+    private void AddInjections() {
+        _systems.
+            Inject(_ui).
+            Inject(_shipInput).
+            Inject(_playerShipData);
+    }
+
+    private void AddOneFrames() {
+        _systems
+            .OneFrame<ShootEvent>();
+    }
+
+    private void AddSystems() {
+        _systems
+            .Add(new PlayerInitSystem())
+            .Add(new PlayerInputSystem())
+            .Add(new PlayerShootSendEventSystem())
+            .Add(new EntityInitializeSystem())
+            .Add(new DirectionSystem())
+            .Add(new MovementSystem())
+            .Add(new AccelerationSystem())
+            .Add(new RotationSystem())
+            .Add(new ConstrainedAreaSystem())
+            .Add(new RandomDirectionSystem())
+            .Add(new FollowSystem())
+            .Add(new ShootingSystem())
+            .Add(new SpawnSystem())
+            .Add(new ProjectileMovingSystem());
     }
 }

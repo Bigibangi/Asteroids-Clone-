@@ -17,11 +17,12 @@ namespace GameLogic.Movement.Systems {
                 ref var direction = ref directionComponent.direction;
                 ref var transform = ref modelComponent.modelTransform;
                 ref var speed = ref movableComponent.speed;
-                transform.position += new Vector3(
+                var displacement = new Vector3(
                     direction.x,
-                    direction.y)
+                    direction.y).normalized
                     * speed
                     * Time.deltaTime;
+                transform.localPosition += displacement;
             }
         }
     }

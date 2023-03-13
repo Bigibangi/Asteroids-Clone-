@@ -1,5 +1,7 @@
-﻿namespace GameLogic.GameObjects.Tags {
+﻿using Leopotam.Ecs;
 
-    public struct EnemyTag {
+namespace GameLogic.GameObjects.Tags {
+
+    public struct EnemyTag : IEcsIgnoreInFilter {
     }
 }
