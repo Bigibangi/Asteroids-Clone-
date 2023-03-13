@@ -1,20 +1,24 @@
 using Leopotam.Ecs;
 using UnityEngine;
 using Voody.UniLeo;
-using UnityEngine.InputSystem;
 using GameLogic.Movement.Systems;
 using GameLogic.GameObjects.Systems;
 using GameLogic.Spawning.Systems;
 using GameLogic.Combat.Components;
 using GameLogic.Combat.Systems;
 using GameLogic;
+using UnityEngine.InputSystem;
 
 public sealed class EcsStartUp : MonoBehaviour {
-    [SerializeField] private InputAction _inputAction;
     [SerializeField] private UI _ui;
 
     private EcsWorld _world;
     private EcsSystems _systems;
+    private ShipInput _shipInput;
+
+    private void Awake() {
+        _shipInput = new ShipInput();
+    }
 
     private void Start() {
         _world = new EcsWorld();
@@ -30,8 +34,14 @@ public sealed class EcsStartUp : MonoBehaviour {
         _systems?.Run();
     }
 
+    private void OnEnable() {
+        _shipInput.Enable();
+    }
+
     private void AddInjections() {
-        _systems.Inject(_ui);
+        _systems.
+            Inject(_ui).
+            Inject(_shipInput);
     }
 
     private void AddOneFrames() {

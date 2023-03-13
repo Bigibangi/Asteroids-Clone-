@@ -1,8 +1,6 @@
-﻿using GameLogic.Combat.Components;
-using GameLogic.Core.Components;
+﻿using GameLogic.Core.Components;
 using GameLogic.GameObjects.Tags;
 using GameLogic.Movement.Components;
-using GameLogic.Spawning.Components;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -11,8 +9,7 @@ namespace GameLogic.GameObjects.Systems {
     public class PlayerInputSystem : IEcsRunSystem {
         private readonly EcsFilter<PlayerTag, Direction, Model, Rotation, Acceleration> _playerFilter = null;
         private UI _ui;
-        private float _rotationAxis;
-        private float _accelerationDirection;
+        private ShipInput _playerInput;
 
         public void Run() {
             foreach (var i in _playerFilter) {
@@ -26,25 +23,11 @@ namespace GameLogic.GameObjects.Systems {
                 ref var rotationAxis = ref rotationComponent.rotationAxis;
                 ref var accelerationDirection = ref accelerationComponent.accelerationDirection;
                 direction = transform.up;
-                Rotate();
-                rotationAxis = _rotationAxis;
-                Accelerate();
-                accelerationDirection = _accelerationDirection;
+                rotationAxis = _playerInput.Player.Rotate.ReadValue<float>();
+                accelerationDirection = _playerInput.Player.Accelerate.ReadValue<float>();
                 _ui.GameScreen.PositionLabel.text = transform.localPosition.x.ToString() + " " + transform.localPosition.y.ToString();
+                _ui.GameScreen.AngleLabel.text = Vector2.SignedAngle(direction, Vector2.up).ToString();
             }
-        }
-
-        private void Accelerate() {
-            if (Input.GetKey(KeyCode.W)) {
-                _accelerationDirection = 1f;
-            }
-            else {
-                _accelerationDirection = -1f;
-            }
-        }
-
-        private void Rotate() {
-            _rotationAxis = Input.GetAxis("Horizontal");
         }
     }
 }

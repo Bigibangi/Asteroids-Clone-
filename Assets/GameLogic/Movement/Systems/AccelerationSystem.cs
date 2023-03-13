@@ -1,4 +1,5 @@
-﻿using GameLogic.Movement.Components;
+﻿using GameLogic.GameObjects.Tags;
+using GameLogic.Movement.Components;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ namespace GameLogic.Movement.Systems {
 
     public class AccelerationSystem : IEcsRunSystem {
         private readonly EcsFilter<Acceleration, Movable> _accelerationFilter = null;
+        private readonly EcsFilter<Movable, PlayerTag> _playerAccelerationFilter = null;
+        private readonly UI _ui;
 
         public void Run() {
             foreach (var i in _accelerationFilter) {
@@ -21,6 +24,11 @@ namespace GameLogic.Movement.Systems {
                 }
                 else if (speed < 0) {
                     speed = 0;
+                }
+                foreach (var j in _playerAccelerationFilter) {
+                    ref var playerMoveComponent = ref _playerAccelerationFilter.Get1(j);
+                    ref var playerSpeed = ref playerMoveComponent.speed;
+                    _ui.GameScreen.SpeedLabel.text = playerSpeed.ToString();
                 }
             }
         }

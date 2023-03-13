@@ -13,4 +13,3 @@ MonoBehaviour:
   m_Name: PrimaryWepon
   m_EditorClassIdentifier: 
   _projectilePrefab: {fileID: 8459818228564127147, guid: 15ed3b0411c19e34294418e042f03703, type: 3}
-  _projectileSpawnPoint: {fileID: 0}
